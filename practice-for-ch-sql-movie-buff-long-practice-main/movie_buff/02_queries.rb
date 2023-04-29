@@ -48,7 +48,7 @@ def most_supportive
   .where.not(castings: {ord:1})
   .group('actors.id')
   .select('actors.id, actors.name, COUNT(*) as roles')
-  .order('COUNT(castings.id) DESC')
+  .order('COUNT(actors.id) DESC')
   .limit(2);
   
   
